@@ -1,0 +1,61 @@
+Refactored Functions:
+council_room
+mine
+remodel
+smithy
+village
+
+Discussion: Effectively what I did is create either void or int functions for each function I refactored out (depending on if we needed to change the return value). 
+I then moved all of the logic out of the switch statement and into the new code and passed in all the needed function parameters. 
+I purposely did this in a lazy fashion as the code itself is trash and will need heavy refactoring to work correctly. 
+Also I added two bugs by doing simple things to either the same code or the new code.
+
+Two bugs have been added.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Added bug in council_room_func for loop escapes one too late.
+Mine is just bugged, added bad initialization 
+
