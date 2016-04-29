@@ -1,0 +1,14 @@
+Somehow all of my unit tests that fail still yeild decent line coverage at 46%
+
+I am guessing this is due to how much I have to call to test some of the functionality of the program.
+
+However I think this leads me to believe that the dominion implementation is even more poorly coded that I have figured. The problem with this assumption is I can only be sure of my unit tests to a certain degree, it is possible that I made an error in my assertion which reported an error.
+I think this makes a clear argument for testing to be an integral part of the design process, not something slapped on once the program is done.
+Otherwise we end up with dumpster fire code like this dominion implementation. 
+
+As far as my efforts are concerned I went through and read the implmentations of certain functions and cards, tried to implement a test that would hit the core functionality of that card, and then compared the output to what would happen in a real game.
+In most cases the test still fails because of how bad the implmentation of the game is. You can view my bug file to see the few obivious ones I ran into when writting these test.
+This program is just implemented wrong to start with and should be scrapped imo.
+Honestly the most annoying is the fact that the curse pile is not decremented correctly. This can lead to an infinite amount of curses in the game, AKA not good.
+
+-Tanner Fry
