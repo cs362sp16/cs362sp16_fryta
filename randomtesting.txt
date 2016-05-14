@@ -1,0 +1,10 @@
+Coverage seems to improve slightly over the unittesting alone, granted my unit testing was a lot more thorough.
+The code is already pretty broken, given the number of segfaults that occur.
+The main thing I did was specifically add an incorrect increment of a value to trigger my adventurer check.
+
+I am hitting 21.13% lines of coverage from the test I have ran. My mine coverage is 100% and doesn't take very long to run.
+This is because the mine function itself is pretty simplistic.
+My unit tests in general are more advance, but that is because they are larger and more robust.
+I think my random tests could be more expansive, but the number of segfaults really hinders the ability. 
+
+Unit tests were better in my case, but if we consider segfaults faults then random is better at actually finding things.
