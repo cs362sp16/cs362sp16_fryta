@@ -645,7 +645,7 @@ int getCost(int cardNumber)
 void council_room_func(int card, struct gameState *state, int handPos, int *bonus, int currentPlayer){
 	//+4 Cards
 	int i = 0;
-      for (i = 0; i <= 4; i++) //Adding bug here
+      for (i = 0; i < 4; i++)//Adding bug here
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -713,13 +713,13 @@ int mine_func(int card,int i, int j,int choice1, int choice2, struct gameState *
       discardCard(handPos, currentPlayer, state, 0);
 
       //discard trashed card
-      for (i = 0; i < state->handCount[currentPlayer]; i++)
+    for (i = 0; i < state->handCount[currentPlayer]; i++)
 	{
-	  if (state->hand[currentPlayer][i] == j)
-	    {
-	      discardCard(i, currentPlayer, state, 0);			
-	      break;
-	    }
+		if (state->hand[currentPlayer][i] == j)
+		{
+			discardCard(i, currentPlayer, state, 0);			
+			break;
+		}
 	}
 	return 0;
 }
@@ -822,14 +822,14 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	if (supplyCount(choice1, state) <= 0){
 	  if (DEBUG)
 	    printf("None of that card left, sorry!\n");
-
+		
 	  if (DEBUG){
 	    printf("Cards Left: %d\n", supplyCount(choice1, state));
 	  }
 	}
 	else if (state->coins < getCost(choice1)){
 	  printf("That card is too expensive!\n");
-
+		return -1;
 	  if (DEBUG){
 	    printf("Coins: %d < %d\n", state->coins, getCost(choice1));
 	  }
@@ -1213,14 +1213,17 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case sea_hag:
-      for (i = 0; i < state->numPlayers; i++){
-	if (i != currentPlayer){
-	  state->discard[i][state->discardCount[i]] = state->deck[i][state->deckCount[i]--];			    state->deckCount[i]--;
-	  state->discardCount[i]++;
-	  state->deck[i][state->deckCount[i]--] = curse;//Top card now a curse
+      for(i = (currentPlayer+1)%state->numPlayers; i != currentPlayer; i = (i+1)%state->numPlayers)
+		{
+		if (drawCard(i, state) != 1){
+		  PUSH(discard, i, POP_R(hand, i));
+		}  
+		  gainCard(curse, state, 1, i);
+		
 	}
-      }
-      return 0;
+	discardCard(handPos, currentPlayer, state, 0);
+
+	return 0;
 		
     case treasure_map:
       //search hand for another treasure_map
