@@ -15,6 +15,12 @@
 
 /* hand# means index of a card in current active player's hand */
 
+#define PUSH(pile, player, val) state->pile[player][state->pile##Count[player]++] = val
+#define TOP(pile, player) state->pile[player][state->pile##Count[player]-1]
+#define POP(pile, player) state->pile##Count[player]--
+#define POP_R(pile, player) state->pile[player][--state->pile##Count[player]]
+
+
 enum CARD
   {curse = 0,
    estate,
