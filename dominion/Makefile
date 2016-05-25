@@ -1,4 +1,5 @@
 CFLAGS = -Wall -fpic -coverage -lm
+LFLAGS = -lgcov --coverage
 
 rngs.o: rngs.h rngs.c
 	gcc -c rngs.c -g  $(CFLAGS)
@@ -11,7 +12,7 @@ playdom: dominion.o playdom.c
 	gcc -o testdominion testdominion.c -g dominion.o rngs.o $(CFLAGS)
 
 interface.o: interface.h interface.c
-	gcc -c interface.c -g  $(CFLAGS)
+	gcc -c interface.c -g  $(CFLAGS) $(LFLAGS)
 
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)

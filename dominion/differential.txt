@@ -1,0 +1,16 @@
+Assignment 4
+
+Results:
+After running a comparison of my (much less fixed) dominion compared to Trevor Hammock's
+I have determined that his is extremely clean a bug free compared to the partial repaired
+mess that is my dominion code. The biggest problem was fixing a very annoying segfault
+in my implementation that kept the testdominion.c file from running all the way through.
+
+At the end of the day I think the best method to test the program is side by side playing
+a real game in the same order and tracking that both games have the same counts and scores
+as the game is being played. Also would require someone checking for human error though.
+
+With multiple runs my test coverages reaches 60%, the range of runs required seems to
+differ quite a bit when testing. I sometimes hit the coverage amount within 8, others
+would take up to 25. Trevor's was even better getting to the coverage point on a single
+run when using the seed 100! 
