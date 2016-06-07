@@ -767,7 +767,8 @@ int remodel_func(int card,int i, int j,int choice1, int choice2, struct gameStat
 	discardCard(choice1, currentPlayer, state, 1);
 	discardCard(remodel, currentPlayer, state, 0);
 
-	return 0;
+/* XXX: original code was : 	return 0; */
+	return NULL; //0;
 }
 
 void village_func(int card,int i, int j,int choice1, int choice2, struct gameState *state, int handPos, int *bonus, int currentPlayer){
@@ -1356,6 +1357,7 @@ int updateCoins(int player, struct gameState *state, int bonus)
 
   return 0;
 }
+
 
 
 

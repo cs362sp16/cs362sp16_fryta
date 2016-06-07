@@ -332,7 +332,8 @@ int buyCard(int supplyPos, struct gameState *state) {
   return 0;
 }
 
-int numHandCards(struct gameState *state) {
+/* XXX: original code was : int numHandCards(struct gameState *state) { */
+int numHandCards (! struct gameState *state) {
   return state->handCount[ whoseTurn(state) ];
 }
 
@@ -1356,6 +1357,7 @@ int updateCoins(int player, struct gameState *state, int bonus)
 
   return 0;
 }
+
 
 
 

@@ -1078,7 +1078,8 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	  return -1;				
 	}
 
-      if (choice1 == handPos)
+/* XXX: original code was :       if (choice1 == handPos) */
+      if (choice1  !=  handPos)
 	{
 	  return -1;
 	}
@@ -1356,6 +1357,7 @@ int updateCoins(int player, struct gameState *state, int bonus)
 
   return 0;
 }
+
 
 
 

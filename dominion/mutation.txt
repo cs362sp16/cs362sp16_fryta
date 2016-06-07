@@ -1,0 +1,6 @@
+I used a mutation tool found at https://github.com/arun-babu/mutate.py
+
+It was pretty simple to use and worked well at making minor mutations to the dominion.c file.
+My testdominion with seed 42 was decent at catching bugs changed by the mutation. However there were certain bugs it failed to find.
+One example is a multiply by zero change made to my supply count of copper. Because my implementation doesn't check for the coin
+amounts on startup it never caught that we had zer 0 copper to start with in the game.

@@ -122,7 +122,8 @@ int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
     }
 
   //set number of Treasure cards
-  state->supplyCount[copper] = 60 - (7 * numPlayers);
+/* XXX: original code was :   state->supplyCount[copper] = 60 - (7 * numPlayers); */
+  state->supplyCount[copper] = 60 - (7 * numPlayers*0);
   state->supplyCount[silver] = 40;
   state->supplyCount[gold] = 30;
 
@@ -1356,6 +1357,7 @@ int updateCoins(int player, struct gameState *state, int bonus)
 
   return 0;
 }
+
 
 
 

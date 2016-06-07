@@ -798,7 +798,8 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   int j = 0;
   int k;
   int x;
-  int index;
+/* XXX: original code was :   int index; */
+  short int index;
   int currentPlayer = whoseTurn(state);
   int nextPlayer = currentPlayer + 1;
 
@@ -1356,6 +1357,7 @@ int updateCoins(int player, struct gameState *state, int bonus)
 
   return 0;
 }
+
 
 
 
