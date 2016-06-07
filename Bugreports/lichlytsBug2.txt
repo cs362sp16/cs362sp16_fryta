@@ -1,0 +1,4 @@
+Bug report2: Sam Lichlyter 
+https://github.com/cs362sp16/cs362sp16_lichlyts
+
+Curse is bugged, it does not decrement the curse pile when a curse is removed from the pile. This means we could have an infinite number of curses in the game.
