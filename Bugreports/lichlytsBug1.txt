@@ -1,0 +1,5 @@
+Bug report1: Sam Lichlyter 
+https://github.com/cs362sp16/cs362sp16_lichlyts
+
+Adventurer does not add the correct number of cards to the hand. It increments 3 rather than 2.
+

@@ -1,0 +1,4 @@
+Bug report3: Sam Lichlyter 
+https://github.com/cs362sp16/cs362sp16_lichlyts
+
+In the drawCard function we incorrectly decrement the deck before checking if the card was successfully drawn. This could be a problem for functions that need to only draw and check specific cards.

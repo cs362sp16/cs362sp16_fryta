@@ -1,0 +1,4 @@
+A main bug I found and fixed in my code was the adventurerCard function. The main problem with the function, was pretty much everything. I completely rewrote the function. Instead of a while loop I just used  for loop that checks for treasure cards, I create a single adventurerCard int to handle the state, I use my own stack functions to handle the card maneuvering upon else rather than the temporary holder and loop increment.
+I found this bug while running my random testing and was getting a higher than normal failure rate when adventurer was in the mix. I was a lot getting a lot of segfaults because of the error in the adventurer was causing an issue in my random testing code. 
+  
+
